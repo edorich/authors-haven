@@ -12,7 +12,7 @@ show-logs:
 
 show-logs-api:
 	docker compose -f local.yml logs api
-
+	 
 makemigrations:
 	docker compose -f local.yml run --rm api python manage.py makemigrations
 
@@ -27,6 +27,12 @@ superuser:
 
 down-v:
 	docker compose -f local.yml down -v
+
+prune-system:
+	docker system prune -a
+
+prune-volume:
+	docker volume prune -a
 
 volume:
 	docker volume inspect src_local_postgres_data
