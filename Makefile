@@ -34,6 +34,9 @@ prune-system:
 prune-volume:
 	docker volume prune -a
 
+prune-image:
+	docker image prune -a
+
 volume:
 	docker volume inspect src_local_postgres_data
 
